@@ -1,0 +1,23 @@
+%original file(current count 0)
+set(arithmetic).
+assign(domain_size, DOMAIN_SIZE).
+assign(max_models, 1).   
+set(print_models).  
+
+formulas(assumptions).
+
+% Rule 1: If x is a neighbor of y, then y is a neighbor of x
+neighbor(x, y) <-> neighbor(y, x).
+
+% Rule 2: If x is NOT a neighbor of y, then y is NOT a neighbor of x
+-neighbor(x, y) <-> -neighbor(y, x). 
+
+% Rule 3: If x and y are neighbors, they must have different colors
+neighbor(x, y) -> color(x) != color(y).
+
+% neighbor relations
+
+
+color(a) = 0.
+
+end_of_list.
